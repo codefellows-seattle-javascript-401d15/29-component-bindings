@@ -1,0 +1,22 @@
+{
+  "name": "disa-lab",
+  "version": "1.0.0",
+  "description": "lab",
+  "main": "entry.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justdisa/29-component-bindings.git"
+  },
+  "keywords": [
+    "lab"
+  ],
+  "author": "justdisa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/justdisa/29-component-bindings/issues"
+  },
+  "homepage": "https://github.com/justdisa/29-component-bindings#readme"
+}
