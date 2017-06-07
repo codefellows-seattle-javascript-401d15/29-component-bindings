@@ -1,0 +1,17 @@
+<section>
+  <form
+    name="deleteGalleryForm"
+    ng-submit="deleteGalleryCtrl.deleteGallery()"
+    novalidate>
+    <fieldset>
+      <label for="name">name</label>
+      <input name="name" type="text" ng-model="deleteGalleryCtrl.gallery.name">
+    </fieldset>
+    <fieldset>
+      <label for="description">desc</label>
+      <input name="description" type="text" ng-model="deleteGalleryCtrl.gallery.desc">
+    </fieldset>
+
+    <button type="submit" name="submit delete">delete</button>
+  </form>
+</section>
