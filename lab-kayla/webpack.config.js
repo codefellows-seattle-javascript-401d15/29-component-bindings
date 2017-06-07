@@ -52,6 +52,10 @@ module.exports = {
         use: 'url-loader?limit=10000&name=image/[hash].[ext]'
       },
       {
+        test: /\.(jpg|jpeg|svg|bmp|tiff|gif|png)$/,
+        loader: 'url-loader?limit=10000&name=image/[hash].[ext]'
+      },
+      {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract(
           {
