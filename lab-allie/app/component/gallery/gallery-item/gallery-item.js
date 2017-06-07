@@ -10,9 +10,13 @@ module.exports = {
     $log.debug('Gallery Item Controller');
     
     this.showEditGallery = false;
-    // 
-    // this.delete = () => {
-    //   this.gallery;
-    // };
+    
+    this.deleteGallery = () => {
+      galleryService.deleteGallery(this.gallery)
+      .then(
+        () => $log.log('Successfully deleted!'),
+        err => $log.error(err)
+      );
+    };
   }],
 };

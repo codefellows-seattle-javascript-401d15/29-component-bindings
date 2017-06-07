@@ -91,6 +91,35 @@ module.exports = [
       })
     };
     
+    service.deleteGallery = (gallery) => {
+      $log.debug('delete gallery service');
+      
+      return authService.getToken()
+      .then(token => {
+        let url = `${__API_URL__}/api/gallery/${gallery._id}`;
+        let config = {
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`
+          }
+        }
+        console.log('config', config);
+        return $http.delete(url, gallery, config)
+      })
+      .then(res => {
+        console.log('in then');
+        service.galleries.forEach((ele, idx) => {
+          if (ele._id === res.data._id) service.galleries.splice(idx, 1);
+        })
+        return service.galleries;
+      })
+      .catch(err => {
+        $log.error(err.message);
+        return $q.reject(err);
+      })
+    };
+    
     return service;
   },
 ];
