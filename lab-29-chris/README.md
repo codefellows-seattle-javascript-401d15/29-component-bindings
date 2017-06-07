@@ -1,8 +1,8 @@
-Lab 28 - Angular-CRUD
+Lab 29 - Component Bindings
 ======
 #### My git hub repo:
    - you can clone or fork from here
-   - https://github.com/ChristopherSClosser/28-angular-crud
+   - https://github.com/ChristopherSClosser/29-component-bindings
 #### Get started
   - Clone or download
   - npm i

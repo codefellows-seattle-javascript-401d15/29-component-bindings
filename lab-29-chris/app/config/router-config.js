@@ -1,13 +1,13 @@
 'use strict';
 
-module.exports = ['$stateProvider', '$urlRouterProvider', routerConfig];
+module.exports = ['$stateProvider', '$urlServiceProvider', routerConfig];
 
-function routerConfig($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.when('', '/home');
-  $urlRouterProvider.when('/', '/join#signup');
-  $urlRouterProvider.when('/signup', '/join#signup');
-  $urlRouterProvider.when('/login', '/join#login');
-  // $urlRouterProvider.when('/logout');
+function routerConfig($stateProvider, $urlServiceProvider) {
+  $urlServiceProvider.rules.when('', '/home');
+  $urlServiceProvider.rules.when('/', '/join#signup');
+  $urlServiceProvider.rules.when('/signup', '/join#signup');
+  $urlServiceProvider.rules.when('/login', '/join#login');
+  // $urlServiceProvider.rules.when('/logout');
 
   let routes = [
     {
@@ -24,20 +24,20 @@ function routerConfig($stateProvider, $urlRouterProvider) {
       controller: 'LandingController',
       controllerAs: 'landingCtrl',
     },
-    {
-      name: 'logout',
-      url: '/logout',
-      template: require('../component/logout/logout.html'),
-      controller: 'LogoutController',
-      controllerAs: 'logoutCtrl',
-    },
-    {
-      name :'gallery',
-      url: '/gallery',
-      template: require('../component/gallery/create-gallery/create-gallery.html'),
-      controller: 'GalleryController',
-      controllerAs: 'galleryCtrl',
-    },
+    // {
+    //   name: 'logout',
+    //   url: '/logout',
+    //   template: require('../component/logout/logout.html'),
+    //   controller: 'LogoutController',
+    //   controllerAs: 'logoutCtrl',
+    // },
+    // {
+    //   name :'gallery',
+    //   url: '/gallery',
+    //   template: require('../component/gallery/create-gallery/create-gallery.html'),
+    //   controller: 'GalleryController',
+    //   controllerAs: 'galleryCtrl',
+    // },
   ];
 
   routes.forEach($stateProvider.state);

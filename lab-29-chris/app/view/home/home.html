@@ -2,12 +2,8 @@
   <h2>{{ homeCtrl.title }}</h2>
   <create-gallery></create-gallery>
   <ul>
-    <li ng-repeat="gallery in homeCtrl.galleries">
-      <ul>  
-        <li>name: {{ gallery.name }}</li>
-        <li>desc: {{ gallery.desc }}</li>
-        <li>id: {{ gallery._id }}</li>
-      </ul>
-    </li>
+    <div>
+      <gallery-item ng-repeat="item in homeCtrl.galleries" gallery="item"></gallery-item>
+    </div>
   </ul>
 </section>
