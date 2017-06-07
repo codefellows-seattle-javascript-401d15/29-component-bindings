@@ -8,7 +8,13 @@ module.exports = {
     console.log(galleryService);
 
     this.showEditGallery = false;
-
+    this.deleteGallery = () => {
+      galleryService.deleteGallery(this.gallery._id)
+      .then(
+        res => $log.log(`${res.status}`, 'delete gallery'),
+        err => $log.error(err)
+      );
+    };
   }],
   bindings: {
     gallery: '<',

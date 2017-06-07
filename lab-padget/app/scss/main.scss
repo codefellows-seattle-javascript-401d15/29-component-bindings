@@ -1,9 +1,15 @@
 // $vars
 
-$color-1: #fff;
-$color-2: #000;
-$color-3: #444;
-$color-4: #888;
+$cf-1: #fff;
+$cf-2: #000;
+$cf-3: #444;
+$cf-4: #888;
+
+$tan: #CEB992;
+$grn: #73937E;
+$gry: #585563;
+$wine: #5B2E48;
+$red: #471323;
 
 $font-size: 1em;
 $font-fam-1: sans-serif;
@@ -14,7 +20,7 @@ $font-fam-2: monospace;
 html, body {
   width: 90%;
   min-height: 100%;
-  background: orange;
+  background: $tan;
   section {
     border: 1px solid black;
   }
@@ -23,17 +29,17 @@ html, body {
 body {
   font-size: $font-size;
   font-family: $font-fam-1;
-  color: $color-2
+  color: $cf-2
 }
 
 h1 {
   font-size: $font-size * 1.5;
   font-family: $font-fam-2;
-  color: $color-3;
+  color: $cf-3;
 }
 
 h2 {
   font-size: $font-size * 1.3;
   font-family: $font-fam-2;
-  color: $color-4;
+  color: $cf-4;
 }
