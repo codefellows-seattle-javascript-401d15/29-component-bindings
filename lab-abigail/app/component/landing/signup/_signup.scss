@@ -1,0 +1,52 @@
+$font-plain: 'Open Sans Condensed';
+$font-fam: 'Londrina Sketch';
+$input-background: #F8F8F8;
+$button-hover-background: #989898;
+
+
+@mixin box {
+  border-radius: 7px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0;
+}
+
+fieldset {
+  width: 300px;
+  margin-bottom: 10px;
+  @include box
+}
+
+input {
+  font-family: $font-plain;
+  font-size: 20px;
+  background-color: $input-background;
+  border-radius: 7px;
+  border: none;
+  margin-top: 20px;
+}
+
+div{
+  text-decoration: none;
+  width: 250px;
+  display: inline-block;
+
+}
+
+span, label, p, a {
+  font-family: $font-plain;
+  font-size: 20px;
+}
+
+button {
+  @include box;
+  font-family: $font-plain;
+  font-size: 30px;
+  display: block;
+  width: 180px;
+  height: 50px;
+  background-color: white;
+  &:hover {
+    background-color: $button-hover-background;
+  }
+}
