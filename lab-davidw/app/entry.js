@@ -1,6 +1,6 @@
 'use strict';
 
-require('./scss/base/main.scss');
+require('./scss/main.scss');
 
 const path = require('path');
 const camelcase = require('camelcase');

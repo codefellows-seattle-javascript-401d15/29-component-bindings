@@ -61,6 +61,33 @@ module.exports = [
       });
     };
 
+    service.deleteGallery = (galleryId) => {
+      $log.debug('#galleryService.deleteGallery');
+
+      return authService.getToken()
+      .then(token => {
+        let url = `${__API_URL__}/api/gallery/${galleryId}`;
+        let config = {
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
+          },
+        };
+        return $http.delete(url, config);
+      })
+      .then( () => {
+        service.galleries.forEach((ele, idx) => {
+          if(ele._id === galleryId) service.galleries.splice(idx, 1);
+        });
+      })
+      .catch(err => {
+        $log.error(err.message);
+        return $q.reject(err);
+      });
+    };
+
+
     service.updateGallery = (galleryId, gallery) => {
       $log.debug('#galleryService.updateGallery');
 
