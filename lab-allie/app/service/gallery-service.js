@@ -63,12 +63,12 @@ module.exports = [
       });
     };
     
-    service.updateGallery = (galleryId, gallery) => {
+    service.updateGallery = (gallery) => {
       $log.debug('galleryService.updateGallery');
       
       return authService.getToken()
       .then(token => {
-        let url = `${__API_URL__}/app/gallery/${galleryId}`;
+        let url = `${__API_URL__}/api/gallery/${gallery._id}`;
         
         let config = {
           headers: {

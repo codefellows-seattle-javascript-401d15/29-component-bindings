@@ -11,7 +11,7 @@ module.exports = {
       $log.debug('edit gallery controller');
       
       this.updateGallery = () => {
-        galleryService.updateGallery(this.gallery._id, this.gallery)
+        galleryService.updateGallery(this.gallery)
         .then(
           () => $log.log('Successfully updated!'),
           err => $log.error(err)
