@@ -1,7 +1,5 @@
 'use strict';
 
-// const expect = require('')
-
 describe('Auth service', function(){
   beforeEach(() => {
     angular.mock.module('cfgram');
@@ -12,7 +10,9 @@ describe('Auth service', function(){
       this.authService = authService;
     });
   });
-  afterEach(() => this.$rootScope.$apply());
+  afterEach(() => {
+    this.$rootScope.$apply();
+  });
 
   describe('authService.getToken', () => {
     it('should return a token', () => {
@@ -29,5 +29,36 @@ describe('Auth service', function(){
     });
 
   });
-  
+
+  describe('#authService.signup', () => {
+    it('should make a valid post request', () => {
+      this.authService.token = null;
+      let expectUrl = `${__API_URL__}/api/signup`;
+      let expectHeaders = {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      };
+      let expectUser = {
+        username: 'testuser',
+        password: '1234567890',
+        email: 'test@test.com',
+      };
+
+      this.$httpBackend.expectPOST(expectUrl, expectUser, expectHeaders)
+      .respond(200, 'test token');
+
+      let req = this.authService.signup(expectUser);
+      expect(req).not.toThrow();
+      this.$httpBackend.flush();
+    });
+  });
+
+  // describe('#authService.login', () => {
+  //
+  // });
+  //
+  // describe('#authService.logout', () => {
+  //
+  // });
+
 });
