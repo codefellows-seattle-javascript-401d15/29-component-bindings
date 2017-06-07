@@ -1,0 +1,21 @@
+<!-- <section class="home-content">
+  <h2>Welcome Home</h2>
+  <h1>{{ homeCtrl.title }}</h1>
+  <h2>{{ homeCtrl.subTitle }}</h2>
+
+  <a href="/#!/signup">Sign-up</a>
+  <a href="/#!/gallery">Gallery</a>
+</section> -->
+
+<section class="home-content">
+  <h2>Welcome home!</h2>
+  <create-gallery></create-gallery>
+
+  <ul>
+    <li ng-repeat="gallery in homeCtrl.galleries">
+      <span>name: {{ gallery.name }}</span>
+      <span>desc: {{ gallery.desc }}</span>
+      <span>id: {{ gallery._id }}</span>
+    </li>
+  </ul>
+</section>
