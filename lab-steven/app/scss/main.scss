@@ -1,0 +1,21 @@
+// **** VARS **** //
+$brandPrimary : #444;
+$brandSecondary : #888;
+$white : #fff;
+$black : #000;
+
+// **** PARTIALS **** //
+
+@import '../view/gallery/gallery';
+@import '../view/home/home';
+@import '../view/landing/landing';
+
+
+// **** MIXINS **** //
+
+
+// **** STYLES **** //
+body {
+  background-color: $brandPrimary;
+  color: $brandSecondary;
+}

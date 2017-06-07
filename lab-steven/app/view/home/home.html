@@ -1,0 +1,14 @@
+<section>
+  <h2>{{ homeCtrl.title }}</h2>
+  <create-gallery></create-gallery>
+
+  <ul>
+    <li ng-repeat="gallery in homeCtrl.galleries">
+      <p>Gallery Name: {{ gallery.name }}</p>
+      <p>Description: {{ gallery.desc }}</p>
+      <p>Id: {{ gallery._id }}</p>
+      <delete-gallery></delete-gallery>
+    </li>
+  </ul>
+  <logout></logout>
+</section>
