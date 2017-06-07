@@ -1,0 +1,50 @@
+html {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  padding: inherit;
+  text-align: left;
+  margin-bottom: 5%;
+}
+
+section {
+  display: inline-block;
+}
+
+body {
+  margin: auto;
+}
+
+h1 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+div.background {
+  margin: auto;
+  background-color: #888;
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  height: 88vh;
+  z-index: -999999999;
+}
+
+label {
+  font-family: monospace;
+}
+
+@media (min-width: 800px) {
+  div.background {
+    left: 25%;
+    right: 25%;
+  }
+
+  html {
+    font-size: 1.25em;
+  }
+}
