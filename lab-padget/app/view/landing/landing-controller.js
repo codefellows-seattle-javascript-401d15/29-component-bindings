@@ -8,7 +8,7 @@ module.exports = [
   '$rootScope',
   'authService',
   function($log, $location, authService) {
-    console.error(authService);
+    console.log(authService);
     this.$onInit = () => {
       let url = $location.url();
       $log.log('url', url);

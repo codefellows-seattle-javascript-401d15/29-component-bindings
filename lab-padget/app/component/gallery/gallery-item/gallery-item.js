@@ -5,7 +5,7 @@ module.exports = {
   controllerAs: 'galleryItemCtrl',
   controller: ['$log', 'galleryService', function($log, galleryService) {
     $log.debug('Gallery Item Controller');
-    console.error(galleryService);
+    console.log(galleryService);
 
     this.showEditGallery = false;
 

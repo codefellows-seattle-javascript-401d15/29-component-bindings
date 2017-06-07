@@ -7,7 +7,7 @@ module.exports = [
   '$window',
   function($q, $log, $http, $window, authService) {
     $log.debug('authService');
-    console.error(authService);
+    console.log(authService);
 
     let service = {};
     let token = null;
