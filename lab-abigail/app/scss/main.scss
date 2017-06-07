@@ -1,0 +1,54 @@
+$brand-primary: #444;
+$btn-primary: $brand-primary / 2;
+$btn-hover: #31b1c1;
+$black: #000;
+$white: #fff;
+$box-std: 10%;
+$gutter-std: 5%;
+$gutter-sm: $gutter-std / 2;
+$font-fam: 'Londrina Sketch';
+$background-color: #EEEE00;
+$header-background: white;
+
+// $mixins
+
+@mixin link {
+  color: white;
+  text-decoration: none;
+  &:hover {
+    background-color: white;
+    color: black;
+  }
+}
+
+// global styles
+
+body {
+  font-family: $font-fam;
+  font-size: 2vw;
+  background: $background-color;
+  text-align: center;
+  margin: 0;
+}
+
+h1 {
+  background-color: $header-background;
+  margin: 0;
+  padding-top: .2em;
+  padding-bottom: .2em;
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2.5em;
+  margin-bottom: 5px;
+}
+
+a {
+  @include link;
+  font-size: 2em;
+}
+
+input {
+  padding: 4px 4px 4px 4px;
+}
