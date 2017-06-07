@@ -1,0 +1,138 @@
+// :::: $vars ::::
+
+$brand-primary: #444;
+$brand-secondary: $brand-primary * 2;
+$btn-primary: $brand-primary / 3;
+$btn-hover: $brand-secondary * 6;
+$black: #000;
+$white: #fff;
+$grey: #EFEEEE;
+$box-std: 80%;
+$gutter-std: 2.5%;
+$gutter-sm: $gutter-std / 2;
+$padding: .5em;
+$font-size-primary: 2.5vw;
+
+// **** MIXINS **** //
+
+@mixin link {
+  color: $black;
+  text-decoration: none;
+  &:hover {
+    color: $white;
+  }
+}
+
+@mixin margin {
+  margin: 2em;
+}
+
+@mixin bubble {
+  border-radius: .20em;
+  font-family: sans-serif;
+}
+
+@mixin drop {
+  @include bubble;
+  font-size: $font-size-primary / 1.05;
+}
+
+// :::: global styles ::::
+
+header {
+  font-family: 'Indie Flower', cursive;
+  font-size: $font-size-primary;
+  height: 10vmin;
+  background-color: $brand-primary;
+}
+
+body {
+  font-family: 'Indie Flower', cursive;
+  font-size: $font-size-primary;
+  background: linear-gradient($brand-secondary, $brand-primary);
+  height: 90vh;
+  width: 99vw
+}
+
+#logo {
+  margin-left: 1em;
+  float: left;
+  display: block;
+  height: 90%;
+  margin: 0;
+}
+
+h1 {
+  width: 99vw;
+  font-size: 5vw;
+  text-align: left;
+  margin-top: $gutter-std;
+  padding-right: 60%;
+}
+
+h2 {
+  font-size: 2vw;
+  text-align: left;
+  margin-bottom: $gutter-std;
+}
+
+select {
+  @include drop
+  width: $box-std / 2;
+}
+
+a {
+  @include link;
+  font-size: $font-size-primary;
+}
+
+footer {
+  background-color: $brand-primary;
+  max-height: 8vmin;
+  min-height: 5vmax;
+  width: 98vw;
+  padding: .5vw;
+  border-top: complement($brand-primary);
+  position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+// :::: app styles ::::
+
+.input-std {
+  @include bubble;
+  width: $box-std + 10%;
+  margin: $gutter-std / 2;
+  padding: 2%;
+  border: none;
+}
+
+.btn-std {
+  font-size: $font-size-primary;
+  width: $box-std / 3;
+  padding: 2% 0;
+  color: $white;
+  background: $brand-primary;
+  @include bubble;
+  cursor: pointer;
+  transition: 350ms all;
+  margin-left: 68%;
+
+  &:hover {
+    background: $btn-hover;
+    color: $black;
+  }
+}
+
+.guide {
+  margin-left: 64%;
+  display: inline;
+}
+
+.container {
+  float: left;
+  width: $box-std;
+  margin: 5%;
+}
