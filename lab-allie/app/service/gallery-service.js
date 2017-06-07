@@ -105,7 +105,7 @@ module.exports = [
           }
         }
         console.log('config', config);
-        return $http.delete(url, gallery, config)
+        return $http.delete(url, config)
       })
       .then(res => {
         console.log('in then');
