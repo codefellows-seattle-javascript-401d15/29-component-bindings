@@ -11,8 +11,6 @@ module.exports = {
       this.$onInit = () => {
 
         $log.debug('#signupCtrl');
-        // authService.getToken()
-        // .then(() => $location.url('/home'));
         
         this.title = 'Please sign in!';
 

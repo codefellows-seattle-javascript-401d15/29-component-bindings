@@ -10,16 +10,19 @@ module.exports = {
     '$location',
     'authService',
     function($log, $location, authService) {
-      $log.debug('#loginCtrl');
-      
-      authService.getToken()
-      .then(() => $location.url('/home'));
-      
-      this.login = function() {
-        $log.debug('loginCtrl.login');
+      this.$onInit = () => {
+
+        $log.debug('#loginCtrl');
         
-        authService.login(this.user)
+        authService.getToken()
         .then(() => $location.url('/home'));
+        
+        this.login = function() {
+          $log.debug('loginCtrl.login');
+          
+          authService.login(this.user)
+          .then(() => $location.url('/home'));
+        };
       };
     },
   ],

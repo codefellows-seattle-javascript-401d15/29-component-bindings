@@ -8,15 +8,12 @@ describe('Testing the Signup Controller', function() {
       this.$window = $window;
       this.$httpBackend = $httpBackend;
       this.authService = authService;
-      // this.$componentController = $componentController;
       this.signupCtrl = $componentController('signupController')
     });
   });
   
   beforeEach(() => {
     this.signupCtrl.$onInit();
-    // this.$window.localStorage.setItem('token', 'test token');
-    
   })
   
   afterEach(() => {
@@ -34,26 +31,24 @@ describe('Testing the Signup Controller', function() {
       };
       
       let expectUrl = 'http://localhost:3000/api/signup';
+      
       let expectConfig = {
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json',
         },
       };
+      
       this.$httpBackend.whenPOST(expectUrl, expectUser, expectConfig).respond(200, 'user token');
+      
       this.signupCtrl.signup(expectUser).then(() => {
         expect(this.$window.localStorage.token).toEqual('user token');
         this.$httpBackend.flush();
         this.$rootScope.$apply();
       });
-      // this.authService.token = this.$window.localStorage.token;
-      
-      // expect(this.signupCtrl.token).toEqual('user token');
     })
     
     it('should have a title property', () => {
-      
-      
       expect(this.signupCtrl.title).toEqual('Please sign in!');
       expect(this.signupCtrl.title).toEqual(jasmine.any(String));
     });
