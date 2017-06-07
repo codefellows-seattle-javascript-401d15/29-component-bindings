@@ -3,10 +3,6 @@
   <create-gallery></create-gallery>
 
   <ul>
-    <li ng-repeat="gallery in galleryCtrl.galleries">
-      <span>name: {{ gallery.name }}</span>
-      <span>description: {{gallery.desc }}</span>
-      <span>id: {{ gallery._id}} </span>
-    </li>
+    <gallery-item ng-repeat="item in galleryCtrl.galleries" gallery="item"></gallery-item>
   </ul>
 </section>
