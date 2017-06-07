@@ -8,7 +8,7 @@ module.exports = {
   },
   controller: ['$log', 'galleryService', function($log, galleryService) {
     this.$onInit = () => {
-      $log.debug('Edit Gallery Controller')
+      $log.debug('Edit Gallery Controller');
       this.updateGallery = () => {
         galleryService.updateGallery(this.gallery._id, this.gallery)
         .then(

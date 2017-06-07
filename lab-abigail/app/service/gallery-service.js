@@ -100,17 +100,17 @@ module.exports = [
             Authorization: `Bearer ${token}`
           }
         }
-        return $http.delete(url, gallery, config)
+        return $http.delete(url, config)
       })
       .then( res => {
-        for(let i =0; i < service.galleries.length; i++) {
+        for(let i = 0; i < service.galleries.length; i++) {
           let current = service.galleries[i];
           if(current._id = galleryId) {
             service.galleries.splice(i, 1);
             break;
           }
+        }
         })
-      })
       .catch(err => {
         $log.error(err.message)
         return $q.reject(err)

@@ -1,5 +1,5 @@
-'use strict'
+'use strict';
 
 module.exports = ['$logProvider', function($logProvider) {
-  $logProvider.debugEnabled(__DEBUG__)
+  $logProvider.debugEnabled(__DEBUG__);
 }]
