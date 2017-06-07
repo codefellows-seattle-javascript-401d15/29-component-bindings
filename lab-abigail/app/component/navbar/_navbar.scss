@@ -1,0 +1,17 @@
+$font-plain: 'Open Sans Condensed';
+$font-fam: 'Londrina Sketch';
+$input-background: #F8F8F8;
+$button-hover-background: #989898;
+$background-color: #EEEE00;
+
+
+.navbar span {
+  font-family: $font-plain;
+  font-size: 25px;
+  display: block;
+  color: white;
+  &:hover {
+    color: black;
+  }
+
+}
