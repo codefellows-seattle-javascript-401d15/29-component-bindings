@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=El+Messiri');
+
+// Vars
+
+$brand-primary: #fff;
+$brand-secondary: #000;
+$brand-dark-comp: #444;
+$brand-light-comp: #888;
+
+@mixin titles {
+  font-size: 25px;
+  font-family: 'El Messiri', sans-serif;
+  a {
+    text-decoration: none;
+    font-family: 'El Messiri', sans-serif;
+    color: $brand-dark-comp;
+  }
+}
+
+h1 {
+  @include titles;
+}
+
+a:link {
+  @include titles;
+}
