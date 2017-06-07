@@ -1,6 +1,5 @@
 'use strict';
 
-// 27
 module.exports = [
   '$q',
   '$log',
@@ -8,8 +7,7 @@ module.exports = [
   '$window',
   function($q, $log, $http, $window, authService) {
     $log.debug('authService');
-    // to satisfy the linter
-    console.log(authService);
+    console.error(authService);
 
     let service = {};
     let token = null;

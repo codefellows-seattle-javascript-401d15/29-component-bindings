@@ -3,6 +3,9 @@
 ## Description
 For this lab we continued working with our front-end angular app utilizing a pre-built backend called slugram. We created a component for displaying, editing, and deleting a gallery.
 
+* [Class 29](https://github.com/codefellows/seattle-javascript-401d15/tree/master/class-29-angular-component-bindings)
+* [Lab 29](https://github.com/codefellows-seattle-javascript-401d15/29-component-bindings)
+
 ## Version
 * 0.1.0
 
