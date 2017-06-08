@@ -24,7 +24,7 @@ describe('Testing the Login Controller', function() {
   describe('testing loginCtrl.login()', () => {
     
     it('should make a valid GET request to log in', () => {
-      let expectUser = {
+      this.loginCtrl.user = {
         username: 'testname',
         email: 'test@test.com',
         password: 'password'
@@ -39,9 +39,9 @@ describe('Testing the Login Controller', function() {
         }
       }
       
-      this.$httpBackend.whenGET(expectUrl, expectUser, expectConfig).respond(200, 'user token');
-      console.log('expectUser', expectUser);
-      this.loginCtrl.login().then(() => {
+      this.$httpBackend.whenGET(expectUrl, this.loginCtrl.user, expectConfig).respond(200, 'user token');
+      console.log('expectUser', this.loginCtrl.user);
+      this.loginCtrl.login(this.loginCtrl.user).then(() => {
         expect(this.$window.localStorage.token).toEqual('user token');
         this.$httpBackend.flush();
         this.$rootScope.$apply();

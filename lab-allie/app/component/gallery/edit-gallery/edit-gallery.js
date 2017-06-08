@@ -6,7 +6,7 @@ module.exports = {
   bindings: {
     gallery: '<',
   },
-  controller: ['$log', 'galleryService', function($log, galleryService) {
+  controller: ['$log', 'galleryService', '$rootScope', function($log, galleryService, $rootScope) {
     this.$onInit = () => {
       $log.debug('edit gallery controller');
       
@@ -14,6 +14,7 @@ module.exports = {
         galleryService.updateGallery(this.gallery)
         .then(
           () => $log.log('Successfully updated!'),
+          $rootScope.$on('locationChangeSuccess', this.fetchGalleries),
           err => $log.error(err)
         );
       };
