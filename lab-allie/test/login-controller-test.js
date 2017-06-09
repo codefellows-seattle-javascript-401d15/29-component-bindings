@@ -1,7 +1,8 @@
 'use strict';
+/* eslint-disable */
 
 describe('Testing the Login Controller', function() {
-  beforeEach(() => { /* eslint-disable */
+  beforeEach(() => { 
     angular.mock.module('routesApp');
     angular.mock.inject(($rootScope, $componentController, $window, $httpBackend, authService) => {
       this.$rootScope = $rootScope;
@@ -10,44 +11,49 @@ describe('Testing the Login Controller', function() {
       this.authService = authService;
       this.loginCtrl = $componentController('loginController');
     });
-  })
+  });
   
   beforeEach(() => {
     this.loginCtrl.$onInit();
     this.$window.localStorage.setItem('token', 'test token');
-  })
+  });
   
   afterEach(() => {
     this.$window.localStorage.removeItem('token');
-  })
+  });
   
   describe('testing loginCtrl.login()', () => {
     
     it('should make a valid GET request to log in', () => {
-      this.loginCtrl.user = {
+      let expectUser = {
         username: 'testname',
         email: 'test@test.com',
-        password: 'password'
-      }
+        password: 'password',
+      };
       
       let expectUrl = 'http://localhost:3000/api/login';
+      
+      let base64 = this.$window.btoa(`${expectUser.username}:${expectUser.password}`);
       
       let expectConfig = {
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json',
-        }
-      }
+          Authorization: `Basic ${base64}`,
+        },
+      };
+      // this.createGalleryCtrl.gallery = expectGallery;
+
+      this.loginCtrl.user = expectUser;
       
-      this.$httpBackend.whenGET(expectUrl, this.loginCtrl.user, expectConfig).respond(200, 'user token');
-      console.log('expectUser', this.loginCtrl.user);
-      this.loginCtrl.login(this.loginCtrl.user).then(() => {
+      this.$httpBackend.expectGET(expectUrl, expectUser, expectConfig).respond(200, 'user token');
+      this.loginCtrl.login().then(() => {
         expect(this.$window.localStorage.token).toEqual('user token');
         this.$httpBackend.flush();
         this.$rootScope.$apply();
-      })
-    })
-  })
+      });
+    });
+  });
   
   
 });
