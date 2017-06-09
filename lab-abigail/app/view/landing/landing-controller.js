@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 module.exports = [
   '$log',
@@ -7,9 +7,9 @@ module.exports = [
   'authService',
   function($log, $location, authService) {
     this.$onInit = () => {
-      let url = $location.url()
-      $log.log('url', url)
-      this.showSignup = url === '/join#signup' || url === '/join'
-    }
-  }
-]
+      let url = $location.url();
+      $log.log('url', url);
+      this.showSignup = url === '/join#signup' || url === '/join';
+    };
+  },
+];
