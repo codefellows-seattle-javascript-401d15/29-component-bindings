@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 // require('./_home.scss')
 
@@ -11,24 +11,24 @@ module.exports = [
   'galleryService',
   function($log, $rootScope, $window, $location, authService, galleryService) {
     this.$onInit = () => {
-      $log.debug('HomeController()')
+      $log.debug('HomeController()');
       if(!$window.localStorage.token) {
         authService.getToken()
         .then(
           () => $location.url('/home'),
           () => $location.url('/signup')
-        )
+        );
       }
-      this.galleries = []
+      this.galleries = [];
 
       this.fetchGalleries = () => {
         return galleryService.fetchGalleries()
         .then(galleries => this.galleries = galleries)
-        .catch(err => $log.error(err))
-      }
+        .catch(err => $log.error(err));
+      };
 
-      $rootScope.$on('locationChangeSuccess', this.fetchGalleries)
-      return this.fetchGalleries()
-    }
-  }
-]
+      $rootScope.$on('locationChangeSuccess', this.fetchGalleries);
+      return this.fetchGalleries();
+    };
+  },
+];
