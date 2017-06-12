@@ -1,0 +1,14 @@
+<section>
+  <form
+    name="deleteGalleryForm"
+    ng-submit="deleteGalleryCtrl.deleteGallery()"
+    novalidate>
+    <ul>
+      <li>name: {{ galleryItemCtrl.gallery.name }}</li>
+      <li>description: {{ galleryItemCtrl.gallery.desc }}</li>
+      <li>id: {{ galleryItemCtrl.gallery._id }}</li>
+    </ul>
+    <label for="submit-delete">Are you sure you want to delete this gallery?</label>
+    <button type="submit" name="submit delete">delete</button>
+  </form>
+</section>
