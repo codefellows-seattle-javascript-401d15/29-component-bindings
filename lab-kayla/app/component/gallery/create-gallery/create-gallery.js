@@ -15,7 +15,7 @@ module.exports = {
         .then(() => {
           let res = this.gallery
           this.gallery.name = null
-          this.gallery.desc = null
+          this.gallery.description = null
           return res
         })
         .catch(err => $log.error(err))
