@@ -19,10 +19,10 @@ module.exports = [
           headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json',
-            Authorization: `Bearer $(token)`
+            Authorization: `Bearer ${token}`
           }
         }
-        return $http.post(`$(__API_URL__)/api/gallery`, gallery, config)
+        return $http.post(`${__API_URL__}/api/gallery`, gallery, config)
       })
       .then(res => {
         $log.log('gallery created')
@@ -44,10 +44,10 @@ module.exports = [
           headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json',
-            Authorization: `Bearer $(token)`
+            Authorization: `Bearer ${token}`
           }
         }
-        return $http.get(`$(__API_URL__)/api/gallery`, config)
+        return $http.get(`${__API_URL__}/api/gallery`, config)
       })
       .then(res => {
         $log.log('galleries retrieved')

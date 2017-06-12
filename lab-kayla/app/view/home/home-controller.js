@@ -23,11 +23,23 @@ module.exports = [
 
       this.fetchGalleries = () => {
         return galleryService.fetchGalleries()
-        .then(galleries => this.galleries = galleries)
+        .then(galleries => {
+          this.galleries = galleries
+          this.currentGallery= this.galleries[0]
+        })
         .catch(err => $log.error(err))
       }
 
       $rootScope.$on('locationChangeSuccess', this.fetchGalleries)
+      $rootScope.$on('newGalleryCreated', this.fetchGalleries)
+      $rootScope.$on('updateCurrentGallery', (gallery) => {
+        for(let i = 0; i < this.galleries.length; i++) {
+          if(this.galleries[i]._id === gallery._id) {
+            this.currentGallery = this.galleries[i]
+            break
+          }
+        }
+      })
       this.fetchGalleries()
     }
   }
