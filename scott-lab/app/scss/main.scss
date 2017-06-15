@@ -1,0 +1,40 @@
+//::::VARS:::://
+
+$brand-font:  'Lobster Two', cursive;
+$brnad-primary: #888;
+$brand-secondary: #444;
+$brand-accent: #7ba;
+$btn-pad: 1% 5%;
+$btn-margin: 1%;
+
+//::::MIXINS:::://
+
+@mixin btns{
+  padding: $btn-pad;
+  background: $brand-secondary;
+  border: none;
+  margin: $btn-margin;
+  text-decoration: none;
+  color: #fff;
+  transition: 500ms all;
+}
+
+@mixin txtPrime{
+  font-family: $brand-font;
+}
+
+//::::STYLES:::://
+
+body{
+  @include txtPrime;
+  background-color: $brnad-primary;
+}
+
+.nav-btn{
+  @include btns;
+
+  &:hover{
+    background: $brand-accent;
+    color: #000;
+  }
+}
