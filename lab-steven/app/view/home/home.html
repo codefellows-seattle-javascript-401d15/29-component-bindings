@@ -1,0 +1,8 @@
+<section>
+  <h2>{{ homeCtrl.title }}</h2>
+  <create-gallery></create-gallery>
+
+  <ul>
+    <gallery-item ng-repeat="gallery in homeCtrl.galleries" gallery="gallery"></gallery-item>
+  </ul>
+</section>

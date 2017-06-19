@@ -1,0 +1,23 @@
+<section>
+  <h2>{{ landingCtrl.title }}</h2>
+
+  <div ng-if="landingCtrl.showSignup">
+    <signup></signup>
+    <div class="">
+    <p>Already a member?</p>
+    <a href="/#!/login"
+      ng-click="landingCtrl.showSignup=false">
+      sign-in here</a>
+    </div>
+
+  </div>
+  <div ng-if="!landingCtrl.showSignup">
+    <div>
+      <login></login>
+      <p>want to sign up?</p>
+      <a href="/#!/signup"
+      ng-click="landingCtrl.showSignup=true">
+        signup here</a>
+    </div>
+  </div>
+</section>
