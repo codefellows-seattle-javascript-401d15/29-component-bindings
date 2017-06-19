@@ -1,0 +1,15 @@
+<li>
+  <div ng-if="!galleryItemCtrl.showEditGallery">
+    <div>
+      <span ng-click="galleryItemCtrl.makeCurrentGallery()">name: {{ galleryItemCtrl.gallery.name }}</span>
+      <span>description: {{ galleryItemCtrl.gallery.description}}</span>
+      <span>id: {{ galleryItemCtrl.gallery._id}}</span>
+    </div>
+  </div>
+
+  <edit-gallery ng-if="galleryItemCtrl.showEditGallery" gallery="galleryItemCtrl.gallery"></edit-gallery>
+  <button ng-click="galleryItemCtrl.showEditGallery=!galleryItemCtrl.showEditGallery">edit</button>
+  <button
+  ng-click="galleryItemCtrl.deleteGallery()">delete</button>
+  <upload-pic gallery="galleryItemCtrl.gallery"></upload-pic>
+</li>
