@@ -1,0 +1,46 @@
+<section>
+  <md-card class="card">
+
+    <div ng-show="!enabled">
+      <md-card-title class="md-headline">Name: {{galleryItemCtrl.gallery.name }}</md-card-title>
+      <md-card-content>
+        <p>description: {{galleryItemCtrl.gallery.desc}}</p>
+      </md-card-content>
+    </div>
+
+    <md-button class="md-raised md-warn" ng-click="galleryItemCtrl.deleteGallery()">Delete Gallery</md-button>
+
+    <md-button class="md-raised"
+    ng-click="enabled = ! enabled">Edit Gallery</button>
+  </md-card>
+
+  <section ng-show="enabled">
+
+    <form
+    name="editGalleryForm"
+    ng-submit="galleryItemCtrl.editGallery()">
+    <fieldset>
+      <md-input-container
+      style="border: thin solid gray; border-radius: 0.2em; background-color: white">
+      <label for="name">name</label>
+      <input
+      type="text"
+      name="name"
+      style="width:20em"
+      ng-model="galleryItemCtrl.gallery.name">
+    </md-input-container><br />
+
+    <md-input-container style="border: thin solid gray; border-radius: 0.2em; background-color: white">
+      <label for="description">desc</label>
+      <input
+      type="text"
+      name="description"
+      style="width:20em"
+      ng-model="galleryItemCtrl.gallery.desc">
+    </md-input-container><br />
+
+    <md-button class="md-raised" type="submit">Update Gallery</md-button>
+  </fieldset>
+</form>
+</section>
+</section>
