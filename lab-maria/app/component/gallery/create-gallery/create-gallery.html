@@ -1,0 +1,32 @@
+
+<section>
+  <h3>Create a new gallery</h3>
+  <div class="center">
+    <form name="createGalleryForm"
+    ng-submit="createGalleryCtrl.createGallery()">
+    <fieldset>
+      <md-input-container
+          style="border: thin solid gray; border-radius: 0.2em; background-color: white">
+        <label for="name">name</label>
+        <input
+        type="text"
+        name="name"
+        ng-model="createGalleryCtrl.gallery.name"
+        style="width:20em"
+        required>
+      </md-input-container><br />
+      <md-input-container style="border: thin solid gray; border-radius: 0.2em; background-color: white">
+        <label for="description">desc</label>
+        <input
+        type="text"
+        name="description"
+        ng-model="createGalleryCtrl.gallery.desc"
+        style="width:20em"
+        required>
+      </md-input-container><br />
+
+      <md-button class="md-raised" type="submit">Create Gallery</md-button>
+    </fieldset>
+  </form>
+</div>
+</section>

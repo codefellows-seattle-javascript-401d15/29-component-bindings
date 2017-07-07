@@ -1,0 +1,32 @@
+<section>
+<p>sign up.</p>
+  <form
+  ng-submit="signupCtrl.signup(signupCtrl.user)"
+  novalidate>
+  <div class="center">
+  <md-input-container style="border: thin solid gray; border-radius: 0.2em; background-color: white">
+    <input type="text"
+      style="width:20em"
+      placeholder="name"
+      ng-minlegnth="4"
+      ng-model="signupCtrl.user.username" required>
+  </md-input-container><br />
+  <md-input-container style="border: thin solid gray; border-radius: 0.2em; background-color: white">
+    <input type="text"
+      style="width:20em"
+      placeholder="email"
+      ng-model="signupCtrl.user.email">
+  </md-input-container><br />
+  <md-input-container style="border: thin solid gray; border-radius: 0.2em; background-color: white">
+    <input type="password"
+      style="width:20em"
+      placeholder="password"
+      ng-minlength="3"
+      ng-model="signupCtrl.user.password">
+  </md-input-container><br />
+</div>
+<div class="right">
+  <md-button class="md-raised" type="submit">Sign up</md-button>
+</div>
+</form>
+</section>

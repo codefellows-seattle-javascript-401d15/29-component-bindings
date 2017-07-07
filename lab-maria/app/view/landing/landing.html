@@ -1,0 +1,26 @@
+<section>
+  <div
+    ng-if="landingCtrl.showSignup">
+    <div>
+      <signup></signup>
+      <p class='switch'>Already a member?
+      <a href = "/#!/login"
+        ng-click="landingCtrl.showSignup=false">
+        Sign In Here
+      </a></p>
+    </div>
+  </div>
+
+  <div
+    ng-if="!landingCtrl.showSignup">
+    <div>
+      <login></login>
+      <p class='switch'>Want to Sign Up?
+      <a href="/#!/signup"
+        ng-click="landingCtrl.showSignup=true">
+        Sign Up Here
+      </a></p>
+    </div>
+  </div>
+
+</section>
