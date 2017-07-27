@@ -1,0 +1,27 @@
+label {
+  font-size: 1.3em;
+  color: navy;
+  font-family: Helvetica;
+}
+
+fieldset {
+  border-style: none;
+  padding-left: 20px;
+}
+
+input {
+  margin: 10px;
+  display: block;
+}
+
+button {
+  margin: 10px;
+}
+
+form {
+  margin: 10px auto;
+  border-style: solid;
+  border-color: white;
+  padding: 5px;
+  width: 200px;
+}
